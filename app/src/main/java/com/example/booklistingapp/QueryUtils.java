@@ -115,7 +115,7 @@ public final class QueryUtils {
                 // Extract the value for the key called "title"
                 String title = volumeInfo.getString("title");
 
-               String description = volumeInfo.getString("description");
+//                String description = volumeInfo.getString("description");
 
 
 
@@ -151,7 +151,8 @@ public final class QueryUtils {
 
                 // Create a new {@link Book} object with the title, author, coverImageUrl, price, currency and language
                 // and url from the JSON response.
-                Books bookItem = new Books(title, author, coverImageUrl, language, amount, buyLink, description);
+                Books bookItem = new Books( coverImageUrl, author , title, language, amount,  buyLink);
+
 
                 // Add the new {@link Book} to the list of booksList.
                 books.add(bookItem);

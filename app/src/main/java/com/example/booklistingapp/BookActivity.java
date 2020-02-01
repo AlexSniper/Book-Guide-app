@@ -167,7 +167,7 @@ public class BookActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 // Convert the String URL into a URI object (to pass into the Intent constructor)
                 assert currentBook != null;
-                Uri buyBookUri = Uri.parse(currentBook.getLanguageOfTheBook());
+                Uri buyBookUri = Uri.parse(currentBook.getmUrlBook());
 
                 // Create a new intent to view buy the book URI
                 Intent websiteIntent = new Intent(Intent.ACTION_VIEW, buyBookUri);

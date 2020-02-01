@@ -1,7 +1,5 @@
 package com.example.booklistingapp;
 import android.content.Context;
-import android.graphics.Picture;
-import android.graphics.drawable.GradientDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.text.DecimalFormat;
 import com.squareup.picasso.Picasso;
-
-import java.text.Format;
-import java.util.Date;
 
 import java.util.List;
 
@@ -64,16 +59,19 @@ public class BookAdapter extends ArrayAdapter<Books> {
         ImageView coverImageView = (ImageView) listItemView.findViewById(R.id.cover_image);
         TextView priceBookTextView = (TextView) listItemView.findViewById(R.id.book_price);
         TextView languageTextView = (TextView) listItemView.findViewById(R.id.country_code);
-        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.description_of_the_book);
+//        TextView descriptionTextView = (TextView) listItemView.findViewById(R.id.description_of_the_book);
+       TextView urlBookTextView = (TextView) listItemView.findViewById(R.id.book_price);
 
 
         assert currentBooks != null;
-        bookTextView.setText(currentBooks.getNameOfTheBook());
+        bookTextView.setText(currentBooks.getTitle());
         authorBookTextView.setText(currentBooks.getAuthor());
         Picasso.with(getContext()).load(currentBooks.getPictureOfBook()).into(coverImageView);
         priceBookTextView.setText(String.valueOf(formatPrice(currentBooks.getmPrice())));
         languageTextView.setText(currentBooks.getLanguageOfTheBook());
-        descriptionTextView.setText(currentBooks.getmDescriptionOfTheBook());
+
+//        descriptionTextView.setText(currentBooks.getmDescriptionOfTheBook());
+
 
 
         Log.i(LOG_TAG, "ListView has been returned");

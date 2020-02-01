@@ -2,8 +2,8 @@ package com.example.booklistingapp;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+
 
 /**
  * An {@link Books} object contains information related to a single earthquake.
@@ -29,7 +29,7 @@ public class Books implements Parcelable {
     private String mAuthor;
 
     /** Time of the earthquake */
-    private String mNameOfTheBook;
+    private String mTitle;
 
     /** Website URL of the earthquake */
     private String mOnWhichLanguage;
@@ -45,10 +45,10 @@ public class Books implements Parcelable {
      */
     private String mUrlBook;
 
-    /**
-     * Description of the book
-     */
-    private String mDescriptionOfTheBook;
+//    /**
+//     * Description of the book
+//     */
+//    private String mDescriptionOfTheBook;
 
     public Double getmPrice() {
         return mPrice;
@@ -56,34 +56,33 @@ public class Books implements Parcelable {
 
     /**
      * Constructs a new {@link Books} object.
-     *
-     * @param pictureOfTheBook is the pictureOfTheBook (size) of the earthquake
+//     *  @param pictureOfTheBook is the pictureOfTheBook (size) of the earthquake
      * @param author is the author where the earthquake happened
-     * @param nameOfTheBook is the time in milliseconds (from the Epoch) when the
-     *                           earthquake happened
+     * @param title is the time in milliseconds (from the Epoch) when the
+ *                           earthquake happened
      * @param onWhichLanguageIsWritten is the website URL to find more details about the earthquake
      */
-    public Books(String pictureOfTheBook, String author, String nameOfTheBook, String onWhichLanguageIsWritten, Double price, String urlBook, String descriptionOfTheBook) {
+    public Books( String pictureOfTheBook,String author, String title, String onWhichLanguageIsWritten, Double price, String urlBook) {
 
-        mPictureOfTheBook = pictureOfTheBook;
+      mPictureOfTheBook = pictureOfTheBook;
         mAuthor = author;
-        mNameOfTheBook = nameOfTheBook;
+        mTitle = title;
         mOnWhichLanguage = onWhichLanguageIsWritten;
         mPrice = price;
         mUrlBook = urlBook;
-        mDescriptionOfTheBook = descriptionOfTheBook;
+//        mDescriptionOfTheBook = descriptionOfTheBook;
 
     }
 
     // Parcelling part
     protected Books(Parcel in) {
-        this.mNameOfTheBook = in.readString();
+        this.mTitle = in.readString();
         this.mAuthor = in.readString();
         this.mPictureOfTheBook = in.readString();
         this.mPrice = (Double) in.readValue(Double.class.getClassLoader());
         this.mOnWhichLanguage = in.readString();
         this.mUrlBook = in.readString();
-        this.mDescriptionOfTheBook =in.readString();
+//        this.mDescriptionOfTheBook =in.readString();
     }
 
     /**
@@ -103,19 +102,19 @@ public class Books implements Parcelable {
     /**
      * Returns the time of the earthquake.
      */
-    public String getNameOfTheBook() {
+    public String getTitle() {
 
-        return mNameOfTheBook;
+        return mTitle;
     }
 
     /**
      * Returns the description of the book.
      */
-    public String getmDescriptionOfTheBook() {
+//    public String getmDescriptionOfTheBook() {
 
-        return mDescriptionOfTheBook;
-    }
-
+//        return mDescriptionOfTheBook;
+//    }
+//
 
     /**
      * Returns the time of the earthquake.
@@ -142,7 +141,7 @@ public class Books implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
 
-        dest.writeString(this.mNameOfTheBook);
+        dest.writeString(this.mTitle);
         dest.writeString(this.mAuthor);
         dest.writeString(this.mPictureOfTheBook);
         dest.writeValue(this.mPrice);

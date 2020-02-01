@@ -25,6 +25,16 @@
     android:paddingStart="16dp">
 
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="0.25"
+        android:orientation="vertical">
+
+
 
     <ImageView
         android:id="@+id/cover_image"
@@ -37,6 +47,9 @@
         tools:text="Long placeholder location that should wrap to more than 2 lines of text" />
 
 
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,16 +59,7 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/book_title"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="sans-serif-medium"
-            android:gravity="center"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            tools:text="Book Title" />
+
 
         <TextView
             android:id="@+id/author"
@@ -68,17 +72,18 @@
             android:textColor="@color/textColorEarthquakeDetails"
             android:textSize="12sp"
             tools:text="Name Of Author" />
+
         <TextView
-            android:id="@+id/description_of_the_book"
+            android:id="@+id/book_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
+            android:layout_gravity="center_vertical"
             android:fontFamily="sans-serif-medium"
-            android:maxLines="1"
-            android:textAllCaps="true"
-            android:textColor="@color/textColorEarthquakeDetails"
-            android:textSize="12sp"
-            tools:text="Description of the book"  />
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="Book Title" />
+
 
 
 
