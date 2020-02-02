@@ -23,7 +23,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by dobry on 01.07.17.
+ * Created by night-sniper 1/02/2020
  */
 
 public final class QueryUtils {
